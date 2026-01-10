@@ -1,0 +1,36 @@
+[project]
+name = "baystate-consolidator"
+version = "0.1.0"
+description = "Product data consolidation, normalization, and deduplication engine for Bay State"
+authors = [
+    { name = "Bay State Engineering", email = "engineering@baystate.com" }
+]
+dependencies = [
+    "polars>=0.20.0",
+    "splink>=3.9.0",
+    "quantulum3>=0.9.0",
+    "price-parser>=0.3.0",
+    "pydantic>=2.0.0",
+    "duckdb>=0.9.0",
+    "supabase>=2.0.0",
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
